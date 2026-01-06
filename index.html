@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZEXORE Gymwear</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: "#0a0a0a",
+            panel: "#141414",
+            accent: "#22c55e",
+            muted: "#9ca3af"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { overflow-x: hidden; }
+    .fade-up {
+      animation: fadeUp 1s ease forwards;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="bg-dark text-white font-sans">
+
+<!-- NAVBAR -->
+<header class="fixed w-full z-50 bg-dark/80 backdrop-blur border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold tracking-wider">ZEXORE</h1>
+
+    <nav class="hidden md:flex space-x-8 text-sm uppercase">
+      <a href="#home" class="hover:text-accent">Home</a>
+      <a href="#products" class="hover:text-accent">Products</a>
+      <a href="#about" class="hover:text-accent">About</a>
+      <a href="#contact" class="hover:text-accent">Contact</a>
+    </nav>
+
+    <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="fixed inset-0 bg-dark hidden flex-col p-10 z-50">
+  <button onclick="toggleMenu()" class="text-right text-3xl mb-10">✕</button>
+  <a href="#home" class="py-4 border-b border-white/10">Home</a>
+  <a href="#products" class="py-4 border-b border-white/10">Products</a>
+  <a href="#about" class="py-4 border-b border-white/10">About</a>
+  <a href="#contact" class="py-4">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center pt-24">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+    <div class="fade-up">
+      <h2 class="text-5xl md:text-6xl font-extrabold leading-tight">
+        POWER YOUR <br><span class="text-accent">PERFORMANCE</span>
+      </h2>
+      <p class="text-muted mt-6">
+        Premium gymwear built for strength, discipline and confidence.
+      </p>
+
+      <div class="mt-8 flex gap-4">
+        <a href="#products" class="bg-accent text-black px-6 py-3 rounded-full font-semibold hover:scale-105 transition">
+          Shop Now
+        </a>
+        <a href="#about" class="border border-white/30 px-6 py-3 rounded-full hover:bg-white hover:text-black transition">
+          Learn More
+        </a>
+      </div>
+    </div>
+
+    <div class="relative fade-up">
+      <div class="absolute inset-0 bg-accent blur-3xl opacity-20"></div>
+      <img src="https://images.unsplash.com/photo-1598971639058-dc3b3a4cfd1c"
+           class="relative rounded-3xl shadow-2xl object-cover h-[500px] w-full">
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="bg-panel py-16">
+  <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 text-center gap-8">
+    <div>
+      <h3 class="text-4xl font-bold text-accent counter" data-target="5000">0</h3>
+      <p class="text-muted">Happy Athletes</p>
+    </div>
+    <div>
+      <h3 class="text-4xl font-bold text-accent counter" data-target="120">0</h3>
+      <p class="text-muted">Products</p>
+    </div>
+    <div>
+      <h3 class="text-4xl font-bold text-accent counter" data-target="5">0</h3>
+      <p class="text-muted">Years Experience</p>
+    </div>
+    <div>
+      <h3 class="text-4xl font-bold text-accent counter" data-target="24">0</h3>
+      <p class="text-muted">Support Hours</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-14">Featured Products</h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      
+      <!-- CARD -->
+      <div class="bg-panel rounded-3xl overflow-hidden hover:-translate-y-2 transition">
+        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e" class="h-72 w-full object-cover">
+        <div class="p-6">
+          <h3 class="font-semibold text-xl">Compression T-Shirt</h3>
+          <p class="text-muted text-sm mt-2">Breathable & sweat-proof</p>
+          <div class="flex justify-between items-center mt-4">
+            <span class="text-accent font-bold">Rs 1399</span>
+            <a href="https://wa.me/923180000000" target="_blank"
+               class="bg-accent text-black px-4 py-2 rounded-full text-sm font-semibold">
+              Buy
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD -->
+      <div class="bg-panel rounded-3xl overflow-hidden hover:-translate-y-2 transition">
+        <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1" class="h-72 w-full object-cover">
+        <div class="p-6">
+          <h3 class="font-semibold text-xl">Gym Hoodie</h3>
+          <p class="text-muted text-sm mt-2">Winter performance wear</p>
+          <div class="flex justify-between items-center mt-4">
+            <span class="text-accent font-bold">Rs 2499</span>
+            <a href="https://wa.me/923180000000" target="_blank"
+               class="bg-accent text-black px-4 py-2 rounded-full text-sm font-semibold">
+              Buy
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD -->
+      <div class="bg-panel rounded-3xl overflow-hidden hover:-translate-y-2 transition">
+        <img src="https://images.unsplash.com/photo-1594736797933-d0fcb1c3e7d8" class="h-72 w-full object-cover">
+        <div class="p-6">
+          <h3 class="font-semibold text-xl">Training Joggers</h3>
+          <p class="text-muted text-sm mt-2">Flexible & durable</p>
+          <div class="flex justify-between items-center mt-4">
+            <span class="text-accent font-bold">Rs 1899</span>
+            <a href="https://wa.me/923180000000" target="_blank"
+               class="bg-accent text-black px-4 py-2 rounded-full text-sm font-semibold">
+              Buy
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="bg-panel py-24">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-6">About ZEXORE</h2>
+    <p class="text-muted max-w-3xl mx-auto">
+      ZEXORE is a modern gymwear brand focused on minimal design,
+      premium fabrics and powerful performance wear for athletes
+      who believe in discipline and consistency.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 text-center">
+  <h2 class="text-4xl font-bold mb-6">Train Hard. Look Strong.</h2>
+  <a href="https://wa.me/923180000000" target="_blank"
+     class="inline-block bg-accent text-black px-10 py-4 rounded-full font-semibold text-lg hover:scale-105 transition">
+    Order on WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact" class="bg-panel border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
+    <div>
+      <h3 class="font-bold text-xl mb-4">ZEXORE</h3>
+      <p class="text-muted text-sm">Premium gymwear for powerful performance.</p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-muted text-sm">
+        <li>Home</li>
+        <li>Products</li>
+        <li>About</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-4">Contact</h4>
+      <p class="text-muted text-sm">WhatsApp: 0318-0000000</p>
+      <p class="text-muted text-sm">Instagram: @zexore_wear</p>
+    </div>
+  </div>
+
+  <div class="text-center text-muted text-xs py-4 border-t border-white/10">
+    © 2026 ZEXORE Gymwear. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  }
+
+  // Counter Animation
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    let target = +counter.dataset.target;
+    let count = 0;
+    let inc = target / 100;
+
+    let update = () => {
+      if (count < target) {
+        count += inc;
+        counter.innerText = Math.ceil(count);
+        requestAnimationFrame(update);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    update();
+  });
+</script>
+
+</body>
+</html>
